@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+clash-config.yaml
+clash-shadowsocks.yaml
+*.log
+.venv/
+venv/
