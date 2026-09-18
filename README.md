@@ -11,7 +11,7 @@
 | 3 | 自动部署 New API（端口 3000） |
 | 4 | 自动部署 Shadowsocks AEAD 节点（端口 8388，chacha20-ietf-poly1305） |
 | 5 | 自动配置 UFW 防火墙，放行 SSH / 3000 / 8388 |
-| 6 | 自动生成本地 Clash YAML 配置文件 |
+| 6 | 自动生成本地 Clash YAML 配置文件，并将 OpenAI / ChatGPT 单独放入可切换分组 |
 
 ## 环境要求
 
@@ -74,6 +74,7 @@ python deploy.py --dry-run
 
 - **New API**：浏览器访问 `http://<服务器IP>:3000`，首次进入设置管理员账号
 - **Shadowsocks**：使用生成的 `clash-config.yaml` 导入 Clash / Clash Verge / ClashX 等客户端
+- **OpenAI / ChatGPT**：默认使用 `DIRECT`，可在 Clash 的 `OpenAI` 分组中切换到其他已验证节点；不要让这类流量经过 VPS 数据中心出口
 
 ## 幂等性
 

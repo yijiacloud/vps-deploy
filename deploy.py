@@ -340,8 +340,19 @@ proxy-groups:
     proxies:
       - "{host} Shadowsocks"
       - DIRECT
+  - name: "OpenAI"
+    type: select
+    proxies:
+      - DIRECT
+      - Proxy
 
 rules:
+  - DOMAIN-SUFFIX,openai.com,OpenAI
+  - DOMAIN-SUFFIX,chatgpt.com,OpenAI
+  - DOMAIN-SUFFIX,oaistatic.com,OpenAI
+  - DOMAIN-SUFFIX,oaiusercontent.com,OpenAI
+  - DOMAIN,challenges.cloudflare.com,OpenAI
+  - DOMAIN,cdn.auth0.com,OpenAI
   - MATCH,Proxy
 """
 
